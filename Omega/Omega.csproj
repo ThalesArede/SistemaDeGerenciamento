@@ -116,11 +116,11 @@
     <Compile Include="frmCadastro.Designer.cs">
       <DependentUpon>frmCadastro.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCustomizacao.cs">
+    <Compile Include="frmConfigurações.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCustomizacao.Designer.cs">
-      <DependentUpon>frmCustomizacao.cs</DependentUpon>
+    <Compile Include="frmConfigurações.Designer.cs">
+      <DependentUpon>frmConfigurações.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPaginaInicial.cs">
       <SubType>Form</SubType>
@@ -160,11 +160,17 @@
     <EmbeddedResource Include="frmBoasVindas.resx">
       <DependentUpon>frmBoasVindas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCustomizacao.resx">
-      <DependentUpon>frmCustomizacao.cs</DependentUpon>
+    <EmbeddedResource Include="frmConfigurações.resx">
+      <DependentUpon>frmConfigurações.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSobre.resx">
+      <DependentUpon>frmSobre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSubMenu1.resx">
       <DependentUpon>frmSubMenu1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSubMenu2.resx">
+      <DependentUpon>frmSubMenu2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Utilidades\dropDownMenu.resx">
       <DependentUpon>dropDownMenu.cs</DependentUpon>

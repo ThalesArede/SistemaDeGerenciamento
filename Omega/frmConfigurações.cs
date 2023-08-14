@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Omega
 {
-    public partial class frmCustomizacao : Form
+    public partial class frmConfigurações : Form
     {
-        public frmCustomizacao()
+        public frmConfigurações()
         {
             InitializeComponent();
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

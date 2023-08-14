@@ -17,17 +17,19 @@ namespace Omega
     {
 
         frmBoasVindas boasVindas;
-        frmCustomizacao configuracoes;
-        frmSobre sobre;
         frmSubMenu1 subMenu1;
         frmSubMenu2 subMenu2;
+        frmAjuda ajuda;
+        frmSobre sobre;
+        frmConfigurações configuracoes;
 
         public frmPaginaInicial()
         {
             InitializeComponent();
             IsMdiContainer = true;
-        }      
-            
+        }
+
+
         //MenuResponsivo
         bool sidebarExpand = true;
         private void sidebarTransition_Tick(object sender, EventArgs e)
@@ -46,8 +48,7 @@ namespace Omega
                     //pnCustomizacao.Width = sidebar.Width;
                     //pnSobre.Width = sidebar.Width;
                 }
-            } 
-            else
+            } else
             {
                 sidebar.Width += 10;
                 if (sidebar.Width >= 230)
@@ -62,7 +63,7 @@ namespace Omega
                     //pnSobre.Width = sidebar.Width;
 
                 }
-            }           
+            }
         }
 
         private void btnHam_Click(object sender, EventArgs e)
@@ -118,7 +119,7 @@ namespace Omega
                 }
             }
         }
-        
+
         private void btnConfig_Click(object sender, EventArgs e)
         {
             timer2.Start();
@@ -129,7 +130,7 @@ namespace Omega
         private void minimizarIcon_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
-        }  
+        }
         private bool isMaximized = false;
         private void maximizarIcon_Click(object sender, EventArgs e)
         {
@@ -178,50 +179,50 @@ namespace Omega
             {
                 // Aplicar cores do modo claro
                 this.BackColor = SystemColors.Control;
-                
+
                 panel1.BackColor = Color.FromArgb(245, 245, 245);
-                
+
                 textBox3.BackColor = SystemColors.Control;
                 textBox3.ForeColor = Color.Black;
 
                 btnHam.BackColor = SystemColors.Control;
                 btnHam.IconColor = Color.Black;
                 sidebar.BackColor = Color.FromArgb(205, 92, 92);
-                
-                pnPaginaInicial.BackColor = Color.FromArgb(205, 92, 92);               
+
+                btnPaginaInicial.BackColor = Color.FromArgb(205, 92, 92);
                 pnMenu.BackColor = Color.FromArgb(205, 92, 92);
-                pnSubMenu1.BackColor = Color.FromArgb(205, 92, 92);
-                pnSubMenu2.BackColor = Color.FromArgb(205, 92, 92);
+                btnConfiguracoes.BackColor = Color.FromArgb(205, 92, 92);
+                btnSubMenu2.BackColor = Color.FromArgb(205, 92, 92);
                 pnConfiguracoes.BackColor = Color.FromArgb(205, 92, 92);
                 pnCustomizacao.BackColor = Color.FromArgb(205, 92, 92);
                 btnBrilho.BackColor = Color.FromArgb(205, 92, 92);
                 pnSobre.BackColor = Color.FromArgb(205, 92, 92);
                 btnSair.BackColor = Color.FromArgb(205, 92, 92);
 
-                
+
             } else
             {
                 // Aplicar cores do modo escuro
                 this.BackColor = Color.FromArgb(40, 40, 40);
-                
+
                 panel1.BackColor = Color.FromArgb(40, 40, 40);
-                
+
                 textBox3.BackColor = SystemColors.Control;
                 textBox3.ForeColor = Color.Black;
 
                 btnHam.BackColor = SystemColors.Control;
                 btnHam.IconColor = Color.Black;
                 sidebar.BackColor = Color.FromArgb(23, 24, 29);
-                
-                pnPaginaInicial.BackColor = Color.FromArgb(23, 24, 29);               
-                pnMenu.BackColor = Color.FromArgb(23, 24, 29);                
-                pnSubMenu1.BackColor = Color.FromArgb(23, 24, 29);
-                pnSubMenu2.BackColor = Color.FromArgb(23, 24, 29);
+
+                btnPaginaInicial.BackColor = Color.FromArgb(23, 24, 29);
+                pnMenu.BackColor = Color.FromArgb(23, 24, 29);
+                btnConfiguracoes.BackColor = Color.FromArgb(23, 24, 29);
+                btnSubMenu2.BackColor = Color.FromArgb(23, 24, 29);
                 pnConfiguracoes.BackColor = Color.FromArgb(23, 24, 29);
                 pnCustomizacao.BackColor = Color.FromArgb(23, 24, 29);
                 btnBrilho.BackColor = Color.FromArgb(23, 24, 29);
                 pnSobre.BackColor = Color.FromArgb(23, 24, 29);
-                btnSair.BackColor = Color.FromArgb(23, 24, 29);          
+                btnSair.BackColor = Color.FromArgb(23, 24, 29);
             }
 
             // Inverter o modo
@@ -231,6 +232,7 @@ namespace Omega
         {
             ToggleDarkMode();
         }
+
 
         //SairFechar
         private void fecharIcone_Click(object sender, EventArgs e)
@@ -243,43 +245,56 @@ namespace Omega
 
         }
 
-        private void pnBoasVindas_Click(object sender, EventArgs e)
+
+        //Abre o frmBoasVindas no lugar correto, sempre definir os frms pro tamanho: 1186; 847 pra caber
+        private void btnPaginaInicial_Click(object sender, EventArgs e)
         {
-            if (boasVindas == null)
+            if (boasVindas == null || boasVindas.IsDisposed)
             {
-                boasVindas = new frmBoasVindas();
-                boasVindas.FormClosed += BoasVindas_FormClosed;
-                boasVindas.MdiParent = this;
+                boasVindas = new frmBoasVindas(); // Crie uma nova instância do formulário frmBoasVindas
+
+                int xOffset = sidebar.Width;
+                int yOffset = arrastarIcon.Height;
+                boasVindas.StartPosition = FormStartPosition.Manual;
+                boasVindas.Location = new Point(
+                    this.Location.X + xOffset,
+                    this.Location.Y + yOffset
+                );
+
+                int width = this.Width - xOffset;
+                int height = this.Height - yOffset;
+                boasVindas.Size = new Size(width, height);
+
                 boasVindas.Show();
-            } 
-            else
+            } else
             {
-                boasVindas.Activate();
+                boasVindas.BringToFront();
             }
-        }   
-        private void BoasVindas_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            boasVindas = null;
         }
 
-        private void pnSubMenu1_Click(object sender, EventArgs e)
+        private void btnConfiguracoes_Click(object sender, EventArgs e)
         {
-            if(subMenu1 == null)
+            if (configuracoes == null || configuracoes.IsDisposed)
             {
-                subMenu1 = new frmSubMenu1();
-                subMenu1.FormClosed += subMenu1_FormClosed;
-                subMenu1.MdiParent = this;
-                subMenu1.Dock = DockStyle.Fill;
-                subMenu1.Show();
-            }
-            else
+                configuracoes = new frmConfigurações(); // Crie uma nova instância do formulário frmConfigurações
+
+                int xOffset = sidebar.Width;
+                int yOffset = arrastarIcon.Height;
+                configuracoes.StartPosition = FormStartPosition.Manual;
+                configuracoes.Location = new Point(
+                    this.Location.X + xOffset,
+                    this.Location.Y + yOffset
+                );
+
+                int width = this.Width - xOffset;
+                int height = this.Height - yOffset;
+                configuracoes.Size = new Size(width, height);
+
+                configuracoes.Show();
+            } else
             {
-                subMenu1.Activate();
+                configuracoes.BringToFront();
             }
-        }
-        private void subMenu1_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            subMenu1 = null;
         }
     }
 }
