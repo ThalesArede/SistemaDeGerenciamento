@@ -36,8 +36,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.confIcon = new FontAwesome.Sharp.IconButton();
             this.dropDownContainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnMenu = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnMenu = new FontAwesome.Sharp.IconButton();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.dropDownContainer.SuspendLayout();
@@ -129,6 +129,16 @@
             this.dropDownContainer.Size = new System.Drawing.Size(218, 132);
             this.dropDownContainer.TabIndex = 33;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnMenu);
+            this.panel1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(218, 44);
+            this.panel1.TabIndex = 0;
+            // 
             // btnMenu
             // 
             this.btnMenu.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -154,23 +164,13 @@
             this.btnMenu.UseVisualStyleBackColor = false;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnMenu);
-            this.panel1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(218, 44);
-            this.panel1.TabIndex = 0;
-            // 
             // dropDownMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dropDownContainer);
             this.Name = "dropDownMenu";
-            this.Size = new System.Drawing.Size(218, 132);
+            this.Size = new System.Drawing.Size(188, 132);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.dropDownContainer.ResumeLayout(false);

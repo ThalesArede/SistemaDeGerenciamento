@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Omega
 {
-    public partial class frmBoasVindas : Form
+    public partial class frmConfiguracoes : Form
     {
-        public frmBoasVindas()
+        public frmConfiguracoes()
         {
             InitializeComponent();
         }

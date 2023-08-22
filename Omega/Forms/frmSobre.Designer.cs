@@ -33,15 +33,16 @@
             // 
             // textBox3
             // 
+            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBox3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Font = new System.Drawing.Font("Segoe UI Emoji", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.ForeColor = System.Drawing.Color.Black;
-            this.textBox3.Location = new System.Drawing.Point(500, 301);
+            this.textBox3.Location = new System.Drawing.Point(490, 35);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(78, 36);
+            this.textBox3.Size = new System.Drawing.Size(99, 36);
             this.textBox3.TabIndex = 28;
-            this.textBox3.Text = "Sobre";
+            this.textBox3.Text = "Sobre i";
             // 
             // frmSobre
             // 

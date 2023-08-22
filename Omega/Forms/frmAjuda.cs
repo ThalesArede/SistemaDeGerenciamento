@@ -80,7 +80,7 @@ namespace Omega
         //Abre o form PaginaInicial novamente e fecha o ajuda
         private void paginainicialIcon_Click(object sender, EventArgs e)
         {
-            frmPaginaInicial paginaInicialForm = new frmPaginaInicial();
+            frmServicos paginaInicialForm = new frmServicos();
             paginaInicialForm.Show();
             this.Hide();
         }

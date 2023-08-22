@@ -44,7 +44,7 @@ namespace Omega
 
                         if (count > 0)
                         {
-                            frmPaginaInicial paginaInicialForm = new frmPaginaInicial();
+                            frmPrincipal paginaInicialForm = new frmPrincipal();
                             paginaInicialForm.Show();
                             this.Hide();
                         } else
